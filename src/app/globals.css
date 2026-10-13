@@ -151,3 +151,12 @@ a.tlink:hover { color: var(--accent-hover); text-decoration: underline; }
 .frame-phone img { border-radius: 22px; }
 
 .hair { border-color: var(--border); }
+
+/* Credentials "See more" disclosure: native details, no JS, no layout change until opened */
+.more-certs > summary { list-style: none; color: var(--accent); }
+.more-certs > summary:hover { color: var(--accent-hover); }
+.more-certs > summary::-webkit-details-marker { display: none; }
+.more-certs > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.more-certs > summary .more-chev { transition: transform .15s ease; }
+.more-certs[open] > summary .more-chev { transform: rotate(180deg); }
+@media (prefers-reduced-motion: reduce) { .more-certs > summary .more-chev { transition: none; } }

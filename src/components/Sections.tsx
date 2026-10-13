@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Mail } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Mail } from "lucide-react";
 import { about, approach, contact, credentials, credentialsMore, currently, hero, internshipCert, openLine, proof, timeline } from "@/data/profile";
 import { langHref, ui, type Lang } from "@/data/i18n";
 import { byTier } from "@/data/projects";
@@ -246,21 +246,27 @@ export function Credentials({ lang }: L) {
           </li>
         ))}
       </ul>
-      <ul className="small muted mt-6 flex flex-col gap-x-6 gap-y-2 sm:flex-row sm:flex-wrap">
-        {credentialsMore[lang].map((c) => (
-          <li key={c.text}>
-            {c.text}
-            {c.links?.map((l) => (
-              <span key={l.href}>
-                {" "}
-                <a className="tlink inline-flex min-h-6 items-center gap-0.5" href={l.href} target="_blank" rel="noopener noreferrer" aria-label={`${l.label[lang]}: ${c.text} (${nt})`}>
-                  {l.label[lang]} <ArrowUpRight size={14} aria-hidden />
-                </a>
-              </span>
-            ))}
-          </li>
-        ))}
-      </ul>
+      <details className="more-certs mt-6">
+        <summary className="small inline-flex min-h-11 cursor-pointer items-center gap-2 font-medium">
+          {ui.buttons.moreCerts[lang]} ({credentialsMore[lang].length})
+          <ChevronDown size={16} aria-hidden className="more-chev" />
+        </summary>
+        <ul className="small muted mt-4 flex flex-col gap-x-6 gap-y-2 sm:flex-row sm:flex-wrap">
+          {credentialsMore[lang].map((c) => (
+            <li key={c.text}>
+              {c.text}
+              {c.links?.map((l) => (
+                <span key={l.href}>
+                  {" "}
+                  <a className="tlink inline-flex min-h-6 items-center gap-0.5" href={l.href} target="_blank" rel="noopener noreferrer" aria-label={`${l.label[lang]}: ${c.text} (${nt})`}>
+                    {l.label[lang]} <ArrowUpRight size={14} aria-hidden />
+                  </a>
+                </span>
+              ))}
+            </li>
+          ))}
+        </ul>
+      </details>
     </section>
   );
 }

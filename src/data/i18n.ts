@@ -74,6 +74,7 @@ export const ui = {
     readme: { en: "README", id: "README" },
     verify: { en: "Verify on Credly", id: "Verifikasi di Credly" },
     viewCert: { en: "View certificate", id: "Lihat sertifikat" },
+    moreCerts: { en: "See more certificates", id: "Lihat sertifikat lainnya" },
     allWork: { en: "All work", id: "Semua karya" },
     next: { en: "Next case study", id: "Studi kasus berikutnya" },
     github: { en: "GitHub", id: "GitHub" },
