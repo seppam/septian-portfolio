@@ -64,8 +64,8 @@ export const projects: Project[] = [
     title: "URSSET",
     meta: { en: "Hackathon · Solo · Oct 2026", id: "Hackathon · Solo · Okt 2026" },
     oneLiner: {
-      en: "Buy a share of a rental property, receive rent, and resell, with ownership and payouts verifiable onchain.",
-      id: "Beli bagian dari properti sewa, terima hasil sewanya, dan jual kembali, dengan kepemilikan dan pembayaran yang bisa diverifikasi onchain.",
+      en: "Buy a share of a rental property, receive rent, and resell, with ownership and payouts verifiable onchain. Runs on Robinhood Chain Testnet (testnet, not real money).",
+      id: "Beli bagian dari properti sewa, terima hasil sewanya, dan jual kembali, dengan kepemilikan dan pembayaran yang bisa diverifikasi onchain. Berjalan di Robinhood Chain Testnet (testnet, bukan uang sungguhan).",
     },
     bullets: {
       en: [
@@ -75,11 +75,11 @@ export const projects: Project[] = [
       ],
       id: [
         "Dibangun sendirian untuk Ethereum Jakarta Hackathon 2026 (peserta): aplikasi Next.js dengan wallet tertanam Privy, sehingga pengguna tidak perlu mengurus seed phrase.",
-        "7 jenis kontrak Solidity dicakup 45 tes Foundry; allow-list KYC ditegakkan di dalam kontrak token.",
-        "Pembagian sewa pro-rata dan jual kembali non-custodial; antarmuka dwibahasa ID/EN.",
+        "7 jenis kontrak Solidity dengan 45 tes Foundry; allow-list KYC ditegakkan di dalam kontrak token.",
+        "Pembagian sewa pro rata dan jual kembali non-custodial; antarmuka dwibahasa ID/EN.",
       ],
     },
-    stack: ["Next.js", "Privy", "Solidity", "Foundry", "Robinhood Chain"],
+    stack: ["Next.js", "Privy", "Solidity", "Foundry", "Robinhood Chain Testnet"],
     badges: ["solo", "participant"],
     links: {
       live: "https://ursset.vercel.app",
@@ -173,14 +173,14 @@ export const projects: Project[] = [
     },
     bullets: {
       en: [
-        "My part: backend and AI orchestration. I helped build the agents (spec, asset-mapper, coder, debug) that generate the game.",
+        "Backend and multi-agent AI orchestration; 25 of 61 commits in a teammate's repository.",
         "Multi-provider LLM fallback so a failing model does not stop a generation; Kenney asset pipeline.",
-        "MAXY Academy Project Sprint for KADA alumni, 7 to 18 Sep 2026. 25 of the 61 commits in the team repository are mine.",
+        "MAXY Academy Project Sprint for KADA alumni, 7 to 18 Sep 2026.",
       ],
       id: [
-        "Bagian saya: backend dan orkestrasi AI. Saya ikut membangun agen-agen (spec, asset-mapper, coder, debug) yang menghasilkan game.",
+        "Backend dan orkestrasi AI multi-agen; 25 dari 61 commit di repositori rekan tim.",
         "Fallback LLM multi-provider agar satu model yang gagal tidak menghentikan proses generate; pipeline aset Kenney.",
-        "MAXY Academy Project Sprint untuk alumni KADA, 7 sampai 18 Sep 2026. 25 dari 61 commit di repositori tim adalah milik saya.",
+        "Sprint proyek MAXY Academy untuk alumni KADA, 7 sampai 18 Sep 2026.",
       ],
     },
     stack: ["Next.js", "Supabase", "Phaser", "Playwright", "Claude / OpenAI / Gemini / Groq"],
@@ -215,12 +215,12 @@ export const projects: Project[] = [
         src: "/work/gameforge/studio-start.webp",
         alt: {
           en: "GameForge Studio start screen with four starter ideas and a prompt box",
-          id: "Layar awal GameForge Studio dengan empat ide pemula dan kotak prompt",
+          id: "Layar awal GameForge Studio dengan empat ide awal dan kotak prompt",
         },
         kind: "desktop",
         width: 1440,
         height: 738,
-        caption: { en: "Studio start screen: describe a game or pick a starter idea.", id: "Layar awal Studio: deskripsikan game atau pilih ide pemula." },
+        caption: { en: "Studio start screen: describe a game or pick a starter idea.", id: "Layar awal Studio: deskripsikan game atau pilih ide awal." },
       },
       {
         src: "/work/gameforge/agent-plan.webp",
@@ -317,17 +317,17 @@ export const projects: Project[] = [
     },
     bullets: {
       en: [
-        "PM and Lead Developer of a 5-person team in the 250-hour KADA Phase 3 (Batch 3).",
-        "React and Redux Toolkit frontend, Node.js and MongoDB backend, AI API integration, Docker.",
-        "Led planning and development as PM and Lead Developer, from scope to the final build.",
+        "PM and Lead Developer of a team of 5 in the 250-hour KADA Phase 3 (Batch 3).",
+        "Built the Node.js and Express backend on MongoDB: JWT auth, CV parsing and ATS analysis, Gemini and Elice AI integration (13 commits).",
+        "Contributed to the React frontend (6 of 20 commits in a teammate's repository).",
       ],
       id: [
-        "PM dan Lead Developer tim beranggota 5 orang di KADA Phase 3 (Batch 3) sepanjang 250 jam.",
-        "Frontend React dan Redux Toolkit, backend Node.js dan MongoDB, integrasi API AI, Docker.",
-        "Memimpin perencanaan dan pengembangan sebagai PM dan Lead Developer, dari penentuan lingkup sampai build akhir.",
+        "PM dan Lead Developer dalam tim berlima di KADA Phase 3 (Batch 3), program 250 jam.",
+        "Membangun backend Node.js dan Express di atas MongoDB: autentikasi JWT, parsing CV dan analisis ATS, integrasi AI Gemini dan Elice (13 commit).",
+        "Berkontribusi pada frontend React (6 dari 20 commit di repositori rekan tim).",
       ],
     },
-    stack: ["React", "Redux Toolkit", "Node.js", "MongoDB", "Docker"],
+    stack: ["React", "Node.js", "Express", "MongoDB", "Gemini API"],
     badges: ["team", "pm"],
     teamLabel: { en: "Team of 5", id: "Tim berlima" },
     links: {
@@ -390,7 +390,7 @@ export const projects: Project[] = [
     meta: { en: "Hackathon demo", id: "Demo hackathon" },
     oneLiner: {
       en: "Real-time hospital capacity dashboard and specialist-aware ambulance routing demo. Fictional data; not a medical device and no medical advice.",
-      id: "Dasbor kapasitas rumah sakit real-time dan demo rute ambulans yang memperhitungkan spesialis. Data fiktif; bukan alat medis dan bukan nasihat medis.",
+      id: "Dashboard kapasitas rumah sakit real-time dan demo rute ambulans yang memperhitungkan spesialis. Data fiktif; bukan alat medis dan bukan nasihat medis.",
     },
     stack: ["TypeScript", "Next.js", "Socket.io"],
     badges: [],

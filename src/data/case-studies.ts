@@ -77,7 +77,7 @@ export const caseStudies: Record<string, Loc<CaseStudy>> = {
       },
       approach: [
         "Aplikasi Next.js untuk investor dan server untuk operator berkomunikasi dengan kontrak di Robinhood Chain Testnet. Sebuah factory mendaftarkan properti dalam satu transaksi dengan men-deploy dan menghubungkan empat kontrak; tiga kontrak lainnya dipakai bersama. Itulah 7 jenis kontrak pada diagram.",
-        "Setiap setoran sewa dan pembagian pro-ratanya tercatat sebagai event onchain, dan setiap transaksi di antarmuka tertaut ke explorer sebagai buktinya.",
+        "Setiap setoran sewa dan pembagian pro ratanya tercatat sebagai event onchain, dan setiap transaksi di antarmuka tertaut ke explorer sebagai buktinya.",
       ],
       decisions: [
         {
@@ -85,12 +85,12 @@ export const caseStudies: Record<string, Loc<CaseStudy>> = {
           text: "Unit hanya bisa berpindah antar wallet yang terverifikasi di KYCRegistry. Transfer ke wallet yang belum terverifikasi ditolak oleh kontrak, bukan oleh aplikasi. Ini allow-list, bukan klaim kepatuhan regulasi.",
         },
         {
-          title: "Jual kembali non-custodial dan sewa pro-rata",
-          text: "Jual kembali berlangsung lewat kontrak marketplace antar investor terverifikasi dengan harga yang ditetapkan penjual, dan penjual tetap menerima sewa selama unitnya dipasang. Sewa dibagi berdasarkan jumlah unit yang dimiliki.",
+          title: "Jual kembali non-custodial dan sewa pro rata",
+          text: "Jual kembali berlangsung lewat kontrak marketplace antar investor terverifikasi dengan harga yang ditetapkan penjual, dan penjual tetap menerima sewa selama unitnya terdaftar di marketplace. Sewa dibagi berdasarkan jumlah unit yang dimiliki.",
         },
         {
           title: "Yang akan saya ubah",
-          text: "Token uji melewati langkah approve sehingga pembelian cukup satu transaksi; untuk produksi, saya akan memakai penyedia pembayaran berlisensi dan approval yang normal. Satu kunci operator bisa memverifikasi wallet, mencetak Rupiah uji, dan menyetor sewa; produksi membutuhkan KYC sungguhan dan sewa dari rekening bank SPV. Sewa dibagi dengan snapshot saat setoran, yang bisa dimanfaatkan pembeli, dan saya belum punya solusi di level kontrak untuk itu.",
+          text: "Token uji melewati langkah approve sehingga pembelian cukup satu transaksi; untuk produksi, saya akan memakai penyedia pembayaran berlisensi dan approval yang normal. Satu kunci operator bisa memverifikasi wallet, mencetak Rupiah uji, dan menyetor sewa; produksi membutuhkan KYC sungguhan dan sewa dari rekening bank SPV. Sewa dibagi dengan snapshot saat setoran, yang bisa dimanipulasi pembeli, dan saya belum punya solusi di level kontrak untuk itu.",
         },
       ],
       results: [
@@ -107,7 +107,7 @@ export const caseStudies: Record<string, Loc<CaseStudy>> = {
   },
   gameforge: {
     en: {
-      role: "Backend and AI orchestration",
+      role: "Backend and multi-agent AI orchestration",
       team: "Team of 4, remote",
       time: "MAXY Academy Project Sprint for KADA alumni, 7 to 18 Sep 2026",
       problem: [
@@ -115,8 +115,8 @@ export const caseStudies: Record<string, Loc<CaseStudy>> = {
       ],
       myRole: {
         did: [
-          "I owned the backend and the AI orchestration, and I helped build the multiple agents that generate the game: the spec, asset-mapper, coder and debug agents, plus the multi-provider LLM fallback, the Kenney asset pipeline, the Supabase schema and generation stability.",
-          "25 of the 61 commits in the team repository are mine.",
+          "Backend and multi-agent AI orchestration; 25 of 61 commits in a teammate's repository.",
+          "Areas I worked on: the spec, asset-mapper, coder and debug agents, the multi-provider LLM fallback, the Kenney asset pipeline, the Supabase schema and generation stability.",
         ],
         others: "My three teammates worked on the rest of the product. The code lives in a teammate's repository (devinfebrian/GameForge), so I link it as the team repo, not mine.",
       },
@@ -135,12 +135,12 @@ export const caseStudies: Record<string, Loc<CaseStudy>> = {
         },
         {
           title: "What I would change, and what is still in progress",
-          text: "GameForge AI still needs improvement. It works end to end and I am happy with what a team of four delivered in two weeks, but I do not consider it finished. I helped build the agents that generate the game, so that is the part I would keep improving first. I have not listed specific fixes here because I have not scoped them yet and do not want to guess.",
+          text: "GameForge AI still needs improvement. It works end to end and I am happy with what a team of four delivered in two weeks, but I do not consider it finished. The agent orchestration is the part I would keep improving first. I have not listed specific fixes here because I have not scoped them yet and do not want to guess.",
         },
       ],
       results: [
         "Live app: game-forge-rho.vercel.app (sign-up required to generate).",
-        "25 of 61 commits in the team repository; the repo reports 430+ automated tests for the whole project.",
+        "The team repository reports 430+ automated tests for the whole project.",
         "Delivered in a 2-week remote sprint with a team of 4.",
         "The screens below come from a local build of the team app; the short clip is silent and plays only when you press play.",
       ],
@@ -149,22 +149,22 @@ export const caseStudies: Record<string, Loc<CaseStudy>> = {
       ],
     },
     id: {
-      role: "Backend dan orkestrasi AI",
+      role: "Backend dan orkestrasi AI multi-agen",
       team: "Tim berempat, remote",
-      time: "MAXY Academy Project Sprint untuk alumni KADA, 7 sampai 18 Sep 2026",
+      time: "Sprint proyek MAXY Academy untuk alumni KADA, 7 sampai 18 Sep 2026",
       problem: [
         "Orang yang bukan programmer sulit mengubah ide game menjadi sesuatu yang bisa dimainkan. GameForge AI menerima deskripsi dalam bahasa Inggris biasa dan menghasilkan game 2D di browser.",
       ],
       myRole: {
         did: [
-          "Saya memegang backend dan orkestrasi AI, dan ikut membangun beberapa agen yang menghasilkan game: agen spec, asset-mapper, coder, dan debug, ditambah fallback LLM multi-provider, pipeline aset Kenney, skema Supabase, dan stabilitas proses generate.",
-          "25 dari 61 commit di repositori tim adalah milik saya.",
+          "Backend dan orkestrasi AI multi-agen; 25 dari 61 commit di repositori rekan tim.",
+          "Bagian yang saya kerjakan: agen spec, asset-mapper, coder, dan debug, fallback LLM multi-provider, pipeline aset Kenney, skema Supabase, dan stabilitas proses generate.",
         ],
         others: "Tiga rekan tim mengerjakan bagian produk lainnya. Kodenya ada di repositori rekan tim (devinfebrian/GameForge), jadi saya mencantumkannya sebagai repo tim, bukan repo saya.",
       },
       approach: [
-        "Sebuah prompt dikirim ke /api/generate, yang menyiarkan progres lewat SSE selama pipeline berjalan: agen spec menulis dokumen kebutuhan game, asset mapper mencocokkan entitas dan suara dengan aset Kenney CC0 pilihan atau preset suara prosedural, dan agen coder menulis scene Phaser 4 yang singkat.",
-        "Hasilnya disimpan di Supabase, dipratinjau di sandbox terisolasi, dan dipublikasikan di URL bermain. Agen debug dapat memperbaiki error saat runtime. Kotak yang disorot pada diagram adalah orkestrasi yang saya kerjakan.",
+        "Sebuah prompt dikirim ke /api/generate, yang mengirimkan progres secara streaming lewat SSE selama pipeline berjalan: agen spec menulis dokumen kebutuhan game, asset mapper mencocokkan entitas dan suara dengan aset Kenney CC0 pilihan atau preset suara prosedural, dan agen coder menulis scene Phaser 4 yang singkat.",
+        "Hasilnya disimpan di Supabase, dipratinjau di sandbox terisolasi, dan dipublikasikan di URL untuk memainkannya. Agen debug dapat memperbaiki error saat runtime. Kotak yang disorot pada diagram adalah orkestrasi yang saya kerjakan.",
       ],
       decisions: [
         {
@@ -173,21 +173,21 @@ export const caseStudies: Record<string, Loc<CaseStudy>> = {
         },
         {
           title: "Empat agen dengan tugas yang sempit",
-          text: "Spec, pemetaan aset, penulisan kode, dan debugging adalah agen yang terpisah. Agen coder menulis kode scene Phaser 4 yang pendek (umumnya di bawah 200 baris, menurut README repo) di atas lapisan engine yang sudah disuntikkan, alih-alih menulis fisika dari nol.",
+          text: "Spec, pemetaan aset, penulisan kode, dan debugging adalah agen yang terpisah. Agen coder menulis kode scene Phaser 4 yang pendek (umumnya di bawah 200 baris, menurut README repo) di atas lapisan engine yang sudah disisipkan sebelumnya, alih-alih menulis fisika dari nol.",
         },
         {
-          title: "Yang akan saya ubah, dan yang masih berjalan",
-          text: "GameForge AI masih perlu disempurnakan. Produknya berjalan dari awal sampai akhir dan saya puas dengan apa yang dihasilkan tim berempat dalam dua minggu, tetapi saya belum menganggapnya selesai. Saya ikut membangun agen-agen yang menghasilkan game, jadi bagian itulah yang akan saya perbaiki lebih dulu. Saya tidak mencantumkan perbaikan yang spesifik di sini karena belum saya petakan dan tidak ingin menebak-nebak.",
+          title: "Yang akan saya ubah, dan yang masih dalam pengerjaan",
+          text: "GameForge AI masih perlu disempurnakan. Produknya berjalan dari awal sampai akhir dan saya puas dengan apa yang dihasilkan tim berempat dalam dua minggu, tetapi saya belum menganggapnya selesai. Orkestrasi agen adalah bagian yang akan saya perbaiki lebih dulu. Saya tidak mencantumkan perbaikan yang spesifik di sini karena belum saya petakan dan tidak ingin menebak-nebak.",
         },
       ],
       results: [
-        "Aplikasi live: game-forge-rho.vercel.app (perlu mendaftar untuk melakukan generate).",
-        "25 dari 61 commit di repositori tim; repo melaporkan 430+ tes otomatis untuk seluruh proyek.",
+        "Demo live: game-forge-rho.vercel.app (perlu mendaftar untuk melakukan generate).",
+        "Repositori tim melaporkan 430+ tes otomatis untuk seluruh proyek.",
         "Diselesaikan dalam sprint remote 2 minggu bersama tim berempat.",
         "Tampilan di bawah berasal dari build lokal aplikasi tim; klip singkatnya tanpa suara dan baru diputar saat Anda menekan putar.",
       ],
       learned: [
-        "Bekerja di repositori rekan tim dengan waktu dua minggu berarti menyepakati antarmuka lebih dulu dan menjaga perubahan saya tetap kecil dan mudah ditinjau.",
+        "Bekerja di repositori rekan tim dengan tenggat dua minggu berarti menyepakati antarmuka lebih dulu dan menjaga perubahan saya tetap kecil dan mudah ditinjau.",
       ],
     },
   },
@@ -201,18 +201,19 @@ export const caseStudies: Record<string, Loc<CaseStudy>> = {
       ],
       myRole: {
         did: [
-          "As PM, I led the planning of the project for the team of 5.",
-          "As Lead Developer, I built the React and Redux Toolkit frontend and the Node.js and MongoDB backend, integrated the AI API and containerised the app with Docker.",
+          "PM and Lead Developer of a team of 5 in KADA Phase 3 Batch 3 (250 hours). As PM, I led the planning of the project.",
+          "I built the Node.js and Express backend on MongoDB: JWT authentication, CV parsing and ATS analysis, and the Gemini and Elice AI integration (13 commits in seppam/verihire-backend).",
+          "I contributed to the React frontend (React 19 and React Router): 6 of the 20 commits in timurboys112/verihire-capstone.",
         ],
-        others: "The other four members worked on the remaining features and the frontend repository, which lives under a teammate's account.",
+        others: "The other four members worked on the remaining features and most of the frontend; the frontend repository lives under a teammate's account.",
       },
       approach: [
-        "A React and Redux Toolkit single-page frontend talks to a Node.js and Express backend that handles user authentication, AI analysis and payments, with MongoDB for storage. The AI analysis calls an external AI API. The services run in Docker.",
+        "A React frontend (React Router) talks to a Node.js and Express backend with MongoDB for storage. The backend handles JWT authentication, CV parsing and ATS analysis, and calls the Gemini and Elice AI APIs.",
       ],
       decisions: [
         {
-          title: "One Node service for AI analysis, authentication and payments",
-          text: "The backend handles the AI analysis, user authentication and cumulative payment processing in a single Node.js and Express service on MongoDB.",
+          title: "One Node service for authentication, CV analysis and AI integration",
+          text: "The backend handles JWT authentication, CV parsing, ATS analysis and the AI integration in a single Node.js and Express service on MongoDB.",
         },
       ],
       results: [
@@ -231,18 +232,19 @@ export const caseStudies: Record<string, Loc<CaseStudy>> = {
       ],
       myRole: {
         did: [
-          "Sebagai PM, saya memimpin perencanaan proyek untuk tim beranggota 5 orang.",
-          "Sebagai Lead Developer, saya membangun frontend React dan Redux Toolkit serta backend Node.js dan MongoDB, mengintegrasikan API AI, dan mengemas aplikasi dengan Docker.",
+          "PM dan Lead Developer dalam tim berlima di KADA Phase 3 Batch 3 (250 jam). Sebagai PM, saya memimpin perencanaan proyek.",
+          "Saya membangun backend Node.js dan Express di atas MongoDB: autentikasi JWT, parsing CV dan analisis ATS, serta integrasi AI Gemini dan Elice (13 commit di seppam/verihire-backend).",
+          "Saya berkontribusi pada frontend React (React 19 dan React Router): 6 dari 20 commit di timurboys112/verihire-capstone.",
         ],
-        others: "Empat anggota lainnya mengerjakan fitur-fitur sisanya dan repositori frontend, yang berada di akun seorang rekan tim.",
+        others: "Empat anggota lainnya mengerjakan fitur lainnya dan sebagian besar frontend; repositori frontend berada di akun seorang rekan tim.",
       },
       approach: [
-        "Frontend single-page React dan Redux Toolkit berkomunikasi dengan backend Node.js dan Express yang menangani autentikasi pengguna, analisis AI, dan pembayaran, dengan MongoDB sebagai penyimpanan. Analisis AI memanggil API AI eksternal. Layanan berjalan di Docker.",
+        "Frontend React (React Router) berkomunikasi dengan backend Node.js dan Express dengan MongoDB sebagai penyimpanan. Backend menangani autentikasi JWT, parsing CV dan analisis ATS, serta memanggil API AI Gemini dan Elice.",
       ],
       decisions: [
         {
-          title: "Satu layanan Node untuk analisis AI, autentikasi, dan pembayaran",
-          text: "Backend menangani analisis AI, autentikasi pengguna, dan pemrosesan pembayaran kumulatif dalam satu layanan Node.js dan Express di atas MongoDB.",
+          title: "Satu layanan Node untuk autentikasi, analisis CV, dan integrasi AI",
+          text: "Backend menangani autentikasi JWT, parsing CV, analisis ATS, dan integrasi AI dalam satu layanan Node.js dan Express di atas MongoDB.",
         },
       ],
       results: [
