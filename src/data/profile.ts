@@ -30,7 +30,7 @@ export const hero: Loc<{ h1: string; sublineLong: string; sublineShort: string }
   id: {
     h1: "Full-stack developer yang memulai dari masalah bisnisnya.",
     sublineLong:
-      "Systems analyst yang beralih menjadi pembangun aplikasi AI. Saya menghabiskan 3 tahun di IT enterprise Astra Graphia IT. Pada 2026 saya membangun URSSET sendirian serta mengerjakan GameForge AI dan VeriHire dalam tim, masing-masing dengan demo live atau repo yang bisa Anda periksa.",
+      "Systems analyst yang beralih menjadi pembangun aplikasi AI. Saya bekerja 3 tahun di IT enterprise, yaitu di Astra Graphia IT. Pada 2026 saya membangun URSSET sendirian serta mengerjakan GameForge AI dan VeriHire dalam tim, masing-masing dengan demo live atau repo yang bisa Anda periksa.",
     sublineShort:
       "Systems analyst yang beralih menjadi pembangun aplikasi AI. 3 tahun di IT enterprise, lalu URSSET (solo), GameForge AI dan VeriHire (tim).",
   },
@@ -41,13 +41,13 @@ export const proof: Loc<{ value: string; caption: string; href: string }[]> = {
     { value: "3 years", caption: "Enterprise IT at Astra Graphia IT, 2018 to 2021", href: "#timeline" },
     { value: "45 tests", caption: "7 contract types in URSSET (Foundry)", href: "/work/ursset" },
     { value: "5 repos", caption: "Documented, each with a README and tests", href: "#engineering" },
-    { value: "3 credentials", caption: "AWS re/Start, Cisco Cyber Analyst, KADA Phase 3", href: "#credentials" },
+    { value: "9 certificates", caption: "Including AWS re/Start, Cisco Cybersecurity, KADA Phase 3", href: "#credentials" },
   ],
   id: [
     { value: "3 tahun", caption: "IT enterprise di Astra Graphia IT, 2018 sampai 2021", href: "#timeline" },
     { value: "45 tes", caption: "7 jenis kontrak di URSSET (Foundry)", href: "/work/ursset" },
     { value: "5 repo", caption: "Terdokumentasi, masing-masing dengan README dan tes", href: "#engineering" },
-    { value: "3 kredensial", caption: "AWS re/Start, Cisco Cyber Analyst, KADA Phase 3", href: "#credentials" },
+    { value: "9 sertifikat", caption: "Termasuk AWS re/Start, Cisco Cybersecurity, KADA Phase 3", href: "#credentials" },
   ],
 };
 
@@ -70,7 +70,7 @@ export const approach: Loc<{ n: string; title: string; text: string; chips: stri
     {
       n: "01",
       title: "Produk full-stack dan AI",
-      text: "React, Next.js, Node.js, dan TypeScript di sisi front end maupun back end. Fitur LLM dengan fallback antar-provider, guardrail, dan streaming. Smart contract Solidity yang diuji dengan Foundry.",
+      text: "React, Next.js, Node.js, dan TypeScript di sisi frontend maupun backend. Fitur LLM dengan fallback antar-provider, guardrail, dan streaming. Smart contract Solidity yang diuji dengan Foundry.",
       chips: ["React", "Next.js", "Node.js", "TypeScript", "Solidity", "Foundry"],
     },
     {
@@ -90,8 +90,8 @@ export const about: Loc<string[]> = {
   ],
   id: [
     "Saya memulai karier di IT enterprise. Selama tiga tahun di Astra Graphia IT saya menulis dan memperbaiki sistem ASP.NET, menyusun dokumen proses bisnis dan desain sistem teknis, serta mendukung aplikasi ticketing ERP internal yang memenuhi SLA 95% setiap bulan selama saya bertugas di support.",
-    "Setelah jeda karier untuk merawat keluarga dan belajar ulang secara mandiri, saya kembali pada 2026 lewat Korea ASEAN Digital Academy, tempat saya menjadi PM dan Lead Developer VeriHire dalam tim berlima. Sejak itu saya membangun URSSET sendirian, mengerjakan backend dan orkestrasi AI GameForge AI bersama tim berempat, dan menerbitkan lima proyek engineering yang terdokumentasi.",
-    "Saya mencari peran full-stack atau systems analyst di tim yang memakai AI pada produk atau cara kerjanya. Saya suka mengubah kebutuhan yang masih kabur menjadi spesifikasi, fitur yang berjalan, dan tes yang membuktikannya. Pekerjaan saya di 2026 dilakukan dalam tim remote, dan saya membaca serta menulis bahasa Inggris secara profesional.",
+    "Setelah jeda karier untuk merawat keluarga dan belajar ulang secara mandiri, saya kembali pada 2026 lewat Korea ASEAN Digital Academy, tempat saya menjadi PM dan Lead Developer VeriHire dalam tim berlima. Sejak itu saya membangun URSSET sendirian, mengerjakan backend dan orkestrasi AI GameForge AI bersama tim berempat, dan mempublikasikan lima proyek engineering yang terdokumentasi.",
+    "Saya mencari peran full-stack atau systems analyst di tim yang memakai AI pada produk atau cara kerjanya. Saya suka mengubah kebutuhan yang masih kabur menjadi spesifikasi, fitur yang berjalan, dan tes yang membuktikannya. Pekerjaan saya pada 2026 dilakukan dalam tim remote, dan saya membaca serta menulis bahasa Inggris secara profesional.",
   ],
 };
 
@@ -155,7 +155,7 @@ export const timeline: Loc<{ date: string; title: string; text: string }[]> = {
     {
       date: "Apr 2026 to now",
       title: "Independent builder and cloud trainee",
-      text: "AWS re/Start (Orbit reStart), URSSET, GameForge AI (MAXY Academy Project Sprint, Sep 2026), Sectors AI Advisor.",
+      text: "AWS re/Start (Orbit reStart), URSSET, GameForge AI (MAXY Academy Project Sprint for KADA alumni, Sep 2026), Sectors AI Advisor.",
     },
     {
       date: "Feb to Apr 2026",
@@ -187,7 +187,7 @@ export const timeline: Loc<{ date: string; title: string; text: string }[]> = {
     {
       date: "Apr 2026 sampai sekarang",
       title: "Builder mandiri dan trainee cloud",
-      text: "AWS re/Start (Orbit reStart), URSSET, GameForge AI (MAXY Academy Project Sprint, Sep 2026), Sectors AI Advisor.",
+      text: "AWS re/Start (Orbit reStart), URSSET, GameForge AI (sprint proyek MAXY Academy untuk alumni KADA, Sep 2026), Sectors AI Advisor.",
     },
     {
       date: "Feb sampai Apr 2026",
@@ -202,7 +202,7 @@ export const timeline: Loc<{ date: string; title: string; text: string }[]> = {
     {
       date: "Feb sampai Jul 2021",
       title: "Application Support, Astra Graphia IT",
-      text: "Astra Graphia IT (kontrak untuk PT Astra International). Mendukung aplikasi ticketing ERP internal untuk Sales Operation roda empat: 5 sampai 8 tiket per hari, 15 sampai 20 pada hari tersibuk. Memenuhi SLA 95% setiap bulan.",
+      text: "Astra Graphia IT (kontrak untuk PT Astra International). Mendukung aplikasi ticketing ERP internal untuk Sales Operation roda empat: 5 sampai 8 tiket per hari, 15 sampai 20 pada hari sibuk. Memenuhi SLA 95% setiap bulan.",
     },
     {
       date: "Jul 2018 sampai Feb 2021",

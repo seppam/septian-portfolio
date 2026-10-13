@@ -25,8 +25,8 @@ export const ui = {
     credentials: { en: "Credentials", id: "Kredensial" },
     contact: { en: "Contact", id: "Kontak" },
     hire: { en: "Hire me", id: "Hubungi saya" },
-    primary: { en: "Primary", id: "Utama" },
-    mobile: { en: "Mobile", id: "Seluler" },
+    primary: { en: "Primary", id: "Navigasi utama" },
+    mobile: { en: "Mobile", id: "Navigasi mobile" },
     openMenu: { en: "Open menu", id: "Buka menu" },
     closeMenu: { en: "Close menu", id: "Tutup menu" },
     home: { en: "Muhamad Septian Pamungkas, home", id: "Muhamad Septian Pamungkas, beranda" },
@@ -47,7 +47,7 @@ export const ui = {
     workEyebrow: { en: "WORK", id: "KARYA" },
     workTitle: { en: "Selected work", id: "Karya pilihan" },
     workIntro: {
-      en: "Four 2026 products. Two are live today. Each shows what I owned.",
+      en: "Four 2026 products. Two are live today. Each shows my part.",
       id: "Empat produk 2026. Dua di antaranya sudah live. Masing-masing menunjukkan bagian yang saya kerjakan.",
     },
     engEyebrow: { en: "ENGINEERING", id: "ENGINEERING" },
@@ -119,7 +119,7 @@ export const ui = {
     title: { en: "This page does not exist.", id: "Halaman ini tidak ada." },
     text: {
       en: "The link may be old. Try the work section or write to me.",
-      id: "Tautannya mungkin sudah lama. Coba bagian karya atau tulis kepada saya.",
+      id: "Tautannya mungkin sudah tidak berlaku. Coba bagian karya atau kirim pesan kepada saya.",
     },
     back: { en: "Back to home", id: "Kembali ke beranda" },
     email: { en: "Email me", id: "Kirim email" },
