@@ -33,7 +33,7 @@ How it is built (Next.js 16, App Router): all routes live under `src/app/[lang]`
 Every user-visible text is `{ en, id }`. Write the English and the Indonesian together; the page for each language reads its own side.
 
 - `src/data/projects.ts`: every project (`meta`, `oneLiner`, `bullets`, image `alt` and `caption` are `{ en, id }`). Add an object and the card, case-study route (if `caseStudy: true` and a matching entry in `src/data/case-studies.ts`), sitemap and link checker pick it up. Tier 1 = large cards (exactly 3 bullets), tier 2 = engineering rows, tier 3 = collapsed "Earlier experiments". Only tier 1 projects can show a "Live" badge (URSSET and GameForge AI today); tier 3 links are plain "Open demo" buttons.
-- `src/data/profile.ts`: hero text, the one "open to hybrid and remote roles" line, proof strip, About, credentials (and the Google Drive certificates folder link), timeline, contact.
+- `src/data/profile.ts`: hero text, the one "open to hybrid and remote roles" line, proof strip, About, credentials (Credly badges and per-file Google Drive certificate links; no folder link), timeline, contact.
 - `src/data/case-studies.ts`: case-study text per slug, `{ en: ..., id: ... }`.
 - `src/data/i18n.ts`: labels and buttons (`ui`), the `langHref` helper.
 - `src/data/site.ts`: `SITE_URL` (`https://septian-pamungkas.vercel.app`, or set `NEXT_PUBLIC_SITE_URL`), titles and descriptions per language.
@@ -42,7 +42,7 @@ Every user-visible text is `{ en, id }`. Write the English and the Indonesian to
 
 ### Live badges and the link checker
 
-`scripts/check-links.mjs` requests every `live:` URL in `projects.ts` before each build and writes `src/data/link-status.json`. A "Live" badge appears only for tier 1 URLs that returned 200; anything else shows "Demo offline" (or nothing) and the build log prints a loud warning. It also warns about repo, YouTube and certificate-folder links that are not 200. Use `npm run check-links -- --strict` to fail instead. Commit the updated JSON.
+`scripts/check-links.mjs` requests every `live:` URL in `projects.ts` before each build and writes `src/data/link-status.json`. A "Live" badge appears only for tier 1 URLs that returned 200; anything else shows "Demo offline" (or nothing) and the build log prints a loud warning. It also warns about repo, YouTube and credential (Credly and Drive file) links that are not 200. Use `npm run check-links -- --strict` to fail instead. Commit the updated JSON.
 
 ### Add screenshots and a clip (for example GameForge AI)
 

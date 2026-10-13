@@ -10,7 +10,6 @@ export const contact = {
   githubLabel: "github.com/seppam",
   linkedin: "https://www.linkedin.com/in/muh-septian-pamungkas",
   linkedinLabel: "linkedin.com/in/muh-septian-pamungkas",
-  certificatesFolder: "https://drive.google.com/drive/folders/1yE0S20za8z8n0gZSezQbCSs7GMqxB9y-?usp=sharing",
   location: "Karawang, West Java, Indonesia",
 };
 
@@ -41,13 +40,13 @@ export const proof: Loc<{ value: string; caption: string; href: string }[]> = {
     { value: "3 years", caption: "Enterprise IT at Astra Graphia IT, 2018 to 2021", href: "#timeline" },
     { value: "45 tests", caption: "7 contract types in URSSET (Foundry)", href: "/work/ursset" },
     { value: "5 repos", caption: "Documented, each with a README and tests", href: "#engineering" },
-    { value: "9 certificates", caption: "Including AWS re/Start, Cisco Cybersecurity, KADA Phase 3", href: "#credentials" },
+    { value: "10 certificates", caption: "Including AWS re/Start, Cisco Cybersecurity, KADA Phase 3", href: "#credentials" },
   ],
   id: [
     { value: "3 tahun", caption: "IT enterprise di Astra Graphia IT, 2018 sampai 2021", href: "#timeline" },
     { value: "45 tes", caption: "7 jenis kontrak di URSSET (Foundry)", href: "/work/ursset" },
     { value: "5 repo", caption: "Terdokumentasi, masing-masing dengan README dan tes", href: "#engineering" },
-    { value: "9 sertifikat", caption: "Termasuk AWS re/Start, Cisco Cybersecurity, KADA Phase 3", href: "#credentials" },
+    { value: "10 sertifikat", caption: "Termasuk AWS re/Start, Cisco Cybersecurity, KADA Phase 3", href: "#credentials" },
   ],
 };
 
@@ -106,6 +105,8 @@ export const currently: Loc<{ label: string; value: string }[]> = {
   ],
 };
 
+const DRIVE = (id: string) => `https://drive.google.com/file/d/${id}/view`;
+
 export type Credential = {
   issuer: string;
   title: string;
@@ -117,7 +118,7 @@ export const credentials: Credential[] = [
   {
     issuer: "Amazon Web Services",
     title: "AWS re/Start Graduate (Orbit reStart)",
-    date: { en: "Sep 2026", id: "Sep 2026" },
+    date: { en: "Aug - Sep 2026 (credential issued 30 Sep 2026)", id: "Agu - Sep 2026 (kredensial terbit 30 Sep 2026)" },
     href: "https://www.credly.com/badges/a8cea779-85ff-449a-beae-b7630e2b4fdf",
   },
   {
@@ -131,23 +132,47 @@ export const credentials: Credential[] = [
     title: "Introduction to Cybersecurity",
     href: "https://www.credly.com/badges/135f8bf0-4e3c-4836-aa15-8c1baaef0a95",
   },
-  { issuer: "Korea ASEAN Digital Academy", title: "Phase 3, Batch 3 (250 hours)", date: { en: "Apr 2026", id: "Apr 2026" } },
-  { issuer: "Studi DevSecOps", title: "Certified Practical DevSecOps Engineer", date: { en: "Apr 2024", id: "Apr 2024" } },
+  { issuer: "Korea ASEAN Digital Academy", title: "Phase 3, Batch 3 (250 hours)", date: { en: "Apr 2026", id: "Apr 2026" }, href: DRIVE("1ohlL7iUWAvdtIer74XDd7LlKwu67nD2H") },
+  { issuer: "Studi DevSecOps", title: "Certified Practical DevSecOps Engineer", date: { en: "Apr 2024", id: "Apr 2024" }, href: DRIVE("1EQ9sHOIuG7-3Lu64U5i-hZHhLY4qjaVQ") },
 ];
 
-export const credentialsMore: Loc<string[]> = {
+export type CredentialLink = { label: Loc<string>; href: string };
+export type CredentialMore = { text: string; links?: CredentialLink[] };
+
+const CERT: Loc<string> = { en: "Certificate", id: "Sertifikat" };
+
+export const credentialsMore: Loc<CredentialMore[]> = {
   en: [
-    "Project Management Bootcamp, Belajarlagi (Jun 2022)",
-    "Data Science, Digital Skola (Jun 2021, 86/100)",
-    "SQL (Basic), HackerRank (Jun 2021)",
-    "R Fundamental for Data Science, DQLab (Nov 2019)",
+    { text: "Project Management Bootcamp, Belajarlagi (Jun 2022)", links: [{ label: CERT, href: DRIVE("1tql8sXwkoGx0VCDq_z9lvj8t2jHWt76s") }] },
+    { text: "Fullstack Digital Marketing Bootcamp, Belajarlagi (Dec 2021)", links: [{ label: CERT, href: DRIVE("1BuI2Y9OwOoWUdaJODcI-RBqZoh720QCI") }] },
+    {
+      text: "Data Science, Digital Skola (Jun 2021, 86/100)",
+      links: [
+        { label: { en: "Completion certificate", id: "Sertifikat kelulusan" }, href: DRIVE("1V5DFiJjJkfmbItiXBnZbyh9g1gpenQSA") },
+        { label: { en: "Final report", id: "Laporan akhir" }, href: DRIVE("12s3rmv488krlU2J8YEHmoNV23d_gEPyP") },
+      ],
+    },
+    { text: "SQL (Basic), HackerRank (Jun 2021)" },
+    { text: "R Fundamental for Data Science, DQLab (Nov 2019)", links: [{ label: CERT, href: DRIVE("1ZzPdFTFdtgmKEXaOE2G70kNWjpogvtDO") }] },
   ],
   id: [
-    "Project Management Bootcamp, Belajarlagi (Jun 2022)",
-    "Data Science, Digital Skola (Jun 2021, 86/100)",
-    "SQL (Basic), HackerRank (Jun 2021)",
-    "R Fundamental for Data Science, DQLab (Nov 2019)",
+    { text: "Project Management Bootcamp, Belajarlagi (Jun 2022)", links: [{ label: CERT, href: DRIVE("1tql8sXwkoGx0VCDq_z9lvj8t2jHWt76s") }] },
+    { text: "Bootcamp Fullstack Digital Marketing, Belajarlagi (Des 2021)", links: [{ label: CERT, href: DRIVE("1BuI2Y9OwOoWUdaJODcI-RBqZoh720QCI") }] },
+    {
+      text: "Data Science, Digital Skola (Jun 2021, 86/100)",
+      links: [
+        { label: { en: "Completion certificate", id: "Sertifikat kelulusan" }, href: DRIVE("1V5DFiJjJkfmbItiXBnZbyh9g1gpenQSA") },
+        { label: { en: "Final report", id: "Laporan akhir" }, href: DRIVE("12s3rmv488krlU2J8YEHmoNV23d_gEPyP") },
+      ],
+    },
+    { text: "SQL (Basic), HackerRank (Jun 2021)" },
+    { text: "R Fundamental for Data Science, DQLab (Nov 2019)", links: [{ label: CERT, href: DRIVE("1ZzPdFTFdtgmKEXaOE2G70kNWjpogvtDO") }] },
   ],
+};
+
+export const internshipCert: CredentialLink = {
+  label: { en: "Internship certificate", id: "Sertifikat magang" },
+  href: DRIVE("1NrJuemvasFOR6ZCvVUfi-LcA2CSzlFkY"),
 };
 
 export const timeline: Loc<{ date: string; title: string; text: string }[]> = {
@@ -155,7 +180,7 @@ export const timeline: Loc<{ date: string; title: string; text: string }[]> = {
     {
       date: "Apr 2026 to now",
       title: "Independent builder and cloud trainee",
-      text: "AWS re/Start (Orbit reStart), URSSET, GameForge AI (MAXY Academy Project Sprint for KADA alumni, Sep 2026), Sectors AI Advisor.",
+      text: "AWS re/Start (Orbit reStart, Aug - Sep 2026), URSSET, GameForge AI (MAXY Academy Project Sprint for KADA alumni, Sep 2026), Sectors AI Advisor.",
     },
     {
       date: "Feb to Apr 2026",
@@ -187,7 +212,7 @@ export const timeline: Loc<{ date: string; title: string; text: string }[]> = {
     {
       date: "Apr 2026 sampai sekarang",
       title: "Builder mandiri dan trainee cloud",
-      text: "AWS re/Start (Orbit reStart), URSSET, GameForge AI (sprint proyek MAXY Academy untuk alumni KADA, Sep 2026), Sectors AI Advisor.",
+      text: "AWS re/Start (Orbit reStart, Agu - Sep 2026), URSSET, GameForge AI (sprint proyek MAXY Academy untuk alumni KADA, Sep 2026), Sectors AI Advisor.",
     },
     {
       date: "Feb sampai Apr 2026",

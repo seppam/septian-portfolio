@@ -38,10 +38,11 @@ for (const u of liveUrls) {
   console.log(`[links] LIVE ${ok ? "ok  " : "FAIL"} ${s} ${u}`);
   if (!ok) bad.push([u, s]);
 }
-// Demo videos (YouTube) and the certificates folder: warn only.
+// Demo videos (YouTube) and credential links (Credly, Drive files): warn only.
 const otherUrls = [...new Set([...src.matchAll(/url:\s*"(https:\/\/youtu\.be\/[^"]+)"/g)].map((m) => m[1]))];
 const profile = readFileSync(join(root, "src/data/profile.ts"), "utf8");
-for (const m of profile.matchAll(/(?:certificatesFolder|href):\s*"(https:\/\/[^"]+)"/g)) otherUrls.push(m[1]);
+for (const m of profile.matchAll(/href:\s*"(https:\/\/[^"]+)"/g)) otherUrls.push(m[1]);
+for (const m of profile.matchAll(/DRIVE\("([^"]+)"\)/g)) otherUrls.push(`https://drive.google.com/file/d/${m[1]}/view`);
 const badOther = [];
 for (const u of otherUrls) {
   const s = await status(u);
