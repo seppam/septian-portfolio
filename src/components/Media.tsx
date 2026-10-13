@@ -41,7 +41,7 @@ export function ProjectVisual({ p, lang, variant }: { p: Project; lang: Lang; va
             className={`frame frame-phone ${
               desktop
                 ? "mx-auto w-[200px] sm:absolute sm:-bottom-6 sm:right-0 sm:mx-0 sm:w-[28%] sm:min-w-[120px]"
-                : "mx-auto w-[220px]"
+                : "mx-auto w-[180px]"
             }`}
           >
             <Shot img={mobile} lang={lang} sizes="240px" />

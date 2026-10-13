@@ -304,6 +304,18 @@ export const projects: Project[] = [
         id: "Demo tidak di-host: untuk menjalankannya dibutuhkan API key Sectors dengan kuota. Tonton videonya atau jalankan secara lokal dari repo.",
       },
     },
+    images: [
+      {
+        src: "/work/sectors/answer.webp",
+        alt: {
+          en: "Sectors AI Advisor on a phone: an Indonesian answer about BBCA with glossary terms, a source link and a not-investment-advice note",
+          id: "Sectors AI Advisor di ponsel: jawaban dalam bahasa Indonesia tentang BBCA dengan istilah glosarium, tautan sumber, dan catatan bukan rekomendasi investasi",
+        },
+        kind: "mobile",
+        width: 440,
+        height: 952,
+      },
+    ],
   },
   {
     slug: "verihire",
@@ -353,6 +365,18 @@ export const projects: Project[] = [
     stack: [".NET 9", "React", "PostgreSQL"],
     badges: [],
     links: { repos: [{ label: REPO, url: gh("seppam/wms-distribution-center") }], readme: gh("seppam/wms-distribution-center#readme") },
+    images: [
+      {
+        src: "/work/wms/dashboard.webp",
+        alt: {
+          en: "WMS Distribution Center dashboard with stock, receipts and outbound order counts, and recent receipts and orders (demo data)",
+          id: "Dasbor WMS Distribution Center dengan jumlah stok, penerimaan, dan pesanan keluar, serta penerimaan dan pesanan terbaru (data demo)",
+        },
+        kind: "desktop",
+        width: 720,
+        height: 405,
+      },
+    ],
   },
   {
     slug: "b2b-order-management",
@@ -381,6 +405,18 @@ export const projects: Project[] = [
     stack: ["Node", "Express", "React", "FFmpeg"],
     badges: [],
     links: { repos: [{ label: REPO, url: gh("seppam/clipgen") }], readme: gh("seppam/clipgen#readme") },
+    images: [
+      {
+        src: "/work/clipgen/editor.webp",
+        alt: {
+          en: "ClipGen editor showing a timeline with two detected highlight segments and the export options",
+          id: "Editor ClipGen yang menampilkan timeline dengan dua segmen sorotan terdeteksi dan opsi ekspor",
+        },
+        kind: "desktop",
+        width: 720,
+        height: 405,
+      },
+    ],
   },
   {
     slug: "medialert-network",
@@ -395,6 +431,18 @@ export const projects: Project[] = [
     stack: ["TypeScript", "Next.js", "Socket.io"],
     badges: [],
     links: { repos: [{ label: REPO, url: gh("seppam/medialert-network") }], readme: gh("seppam/medialert-network#readme") },
+    images: [
+      {
+        src: "/work/medialert/dashboard.webp",
+        alt: {
+          en: "MediAlert dispatch dashboard with active incidents, hospitals online and ER bed counts (fictional data)",
+          id: "Dasbor dispatch MediAlert dengan insiden aktif, rumah sakit online, dan jumlah tempat tidur IGD (data fiktif)",
+        },
+        kind: "desktop",
+        width: 720,
+        height: 405,
+      },
+    ],
   },
   {
     slug: "legalkilat",
@@ -409,6 +457,18 @@ export const projects: Project[] = [
     stack: ["Express", "RAG", "Guardrails"],
     badges: [],
     links: { repos: [{ label: REPO, url: gh("seppam/LegalKilat") }], readme: gh("seppam/LegalKilat#readme") },
+    images: [
+      {
+        src: "/work/legalkilat/kur.webp",
+        alt: {
+          en: "LegalKilat KUR credit module in Indonesian with an instalment calculator and the list of required documents",
+          id: "Modul kredit KUR LegalKilat dengan kalkulator angsuran dan daftar berkas persyaratan",
+        },
+        kind: "desktop",
+        width: 720,
+        height: 405,
+      },
+    ],
   },
 
   // Tier 3: one line each, collapsed. Not shown as Live, even when the link works.
@@ -428,6 +488,18 @@ export const projects: Project[] = [
     stack: [],
     badges: ["prototype"],
     links: { repos: [{ label: REPO, url: gh("seppam/stellarnest") }] },
+    images: [
+      {
+        src: "/work/stellarnest/dashboard.webp",
+        alt: {
+          en: "StellarNest prototype on a phone: balance, a pending claim and recent activity (demo data, Stellar testnet)",
+          id: "Prototipe StellarNest di ponsel: saldo, klaim tertunda, dan aktivitas terbaru (data demo, Stellar testnet)",
+        },
+        kind: "mobile",
+        width: 280,
+        height: 450,
+      },
+    ],
   },
   {
     slug: "executive-ledger",
@@ -470,6 +542,18 @@ export const projects: Project[] = [
     stack: [],
     badges: [],
     links: { live: "https://pos-astrapay.vercel.app", repos: [{ label: REPO, url: gh("seppam/pos-astrapay") }] },
+    images: [
+      {
+        src: "/work/pos-astrapay/dashboard.webp",
+        alt: {
+          en: "POS AstraPay merchant dashboard in Indonesian with a simulation-mode banner, QRIS revenue and stock levels (demo data)",
+          id: "Dasbor merchant POS AstraPay dengan banner mode simulasi, pendapatan QRIS, dan tingkat stok (data demo)",
+        },
+        kind: "desktop",
+        width: 720,
+        height: 450,
+      },
+    ],
   },
   {
     slug: "job-personal-assistant",
@@ -484,6 +568,18 @@ export const projects: Project[] = [
     stack: [],
     badges: [],
     links: { live: "https://job-personal-assistant.vercel.app", repos: [{ label: REPO, url: gh("seppam/job-personal-assistant") }] },
+    images: [
+      {
+        src: "/work/jpa/pipeline.webp",
+        alt: {
+          en: "Job Personal Assistant application pipeline board with five stages (sample companies)",
+          id: "Papan pipeline lamaran Job Personal Assistant dengan lima tahap (perusahaan contoh)",
+        },
+        kind: "desktop",
+        width: 720,
+        height: 450,
+      },
+    ],
   },
   {
     slug: "job-automation-studio",
