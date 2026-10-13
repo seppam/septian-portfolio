@@ -1,14 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Mail } from "lucide-react";
-import { about, approach, contact, credentials, credentialsMore, currently, hero, openLine, proof, timeline } from "@/data/profile";
+import { about, approach, contact, credentials, credentialsMore, currently, hero, internshipCert, openLine, proof, timeline } from "@/data/profile";
 import { langHref, ui, type Lang } from "@/data/i18n";
 import { byTier } from "@/data/projects";
 import { demoState } from "@/lib/links";
 import { Badge } from "./Badges";
 import ProjectCard from "./ProjectCard";
+import { Shot } from "./Media";
 
 type L = { lang: Lang };
+const internshipTitle: Record<Lang, string> = { en: "Career break", id: "Jeda karier" };
 
 function Eyebrow({ n, label }: { n: string; label: string }) {
   return <p className="mono muted mb-3">{n} {label}</p>;
@@ -61,14 +63,23 @@ export function ProofStrip({ lang }: L) {
   return (
     <section aria-label={ui.hero.glance[lang]} className="border-y hair">
       <ul className="wrap grid grid-cols-2 md:grid-cols-4">
-        {proof[lang].map((c, i) => (
-          <li key={c.value} className={`border-[var(--border)] ${i % 2 === 0 ? "border-r" : ""} ${i > 1 ? "border-t md:border-t-0" : ""} md:border-r md:last:border-r-0`}>
-            <Link href={c.href.startsWith("/") ? langHref(lang, c.href) : c.href} className={`block py-5 pr-3 hover:text-[var(--accent)] md:px-5 md:first:pl-0 ${i % 2 === 1 ? "pl-4 md:pl-5" : ""}`}>
-              <span className="block text-[24px] font-semibold leading-none md:text-[40px]">{c.value}</span>
-              <span className="small muted mt-2 block">{c.caption}</span>
-            </Link>
-          </li>
-        ))}
+        {proof[lang].map((c, i) => {
+          // Every cell that has a divider on its left gets padding on that side, so text never touches the line.
+          const cell = [
+            "",
+            "border-l border-[var(--border)] pl-4 md:pl-6",
+            "border-t border-[var(--border)] md:border-l md:border-t-0 md:pl-6",
+            "border-l border-t border-[var(--border)] pl-4 md:border-t-0 md:pl-6",
+          ][i];
+          return (
+            <li key={c.value} className={cell}>
+              <Link href={c.href.startsWith("/") ? langHref(lang, c.href) : c.href} className="block py-5 pr-3 hover:text-[var(--accent)] md:pr-5">
+                <span className="block text-[24px] font-semibold leading-none md:text-[40px]">{c.value}</span>
+                <span className="small muted mt-2 block">{c.caption}</span>
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </section>
   );
@@ -106,7 +117,7 @@ export function Engineering({ lang }: L) {
       </div>
       <ul className="mt-8 divide-y divide-[var(--border)] border-y hair">
         {t2.map((p) => (
-          <li key={p.slug} className="grid gap-3 py-6 md:grid-cols-[1.2fr_2fr_auto] md:items-start md:gap-8">
+          <li key={p.slug} className="grid gap-3 py-6 md:grid-cols-[1.1fr_2fr_auto_224px] md:items-start md:gap-8">
             <h3 className="h3">{p.title}</h3>
             <div className="flex flex-col gap-3">
               <p className="small">{p.oneLiner[lang]}</p>
@@ -120,6 +131,13 @@ export function Engineering({ lang }: L) {
                 <a className="btn btn-secondary btn-sm" href={p.links.readme} target="_blank" rel="noopener noreferrer" aria-label={`README ${p.title} (${nt})`}>{ui.buttons.readme[lang]} <ArrowUpRight size={16} aria-hidden /></a>
               )}
             </div>
+            {p.images?.[0] ? (
+              <div className="frame order-first w-full max-w-[220px] md:order-none md:max-w-none">
+                <Shot img={p.images[0]} lang={lang} sizes="(min-width: 768px) 224px, 360px" />
+              </div>
+            ) : (
+              <div className="hidden md:block" aria-hidden />
+            )}
           </li>
         ))}
       </ul>
@@ -129,8 +147,13 @@ export function Engineering({ lang }: L) {
           {t3.map((p) => {
             const demo = demoState(p);
             return (
-              <li key={p.slug} className="flex flex-col gap-2 py-4 md:flex-row md:items-center md:justify-between md:gap-6">
-                <div>
+              <li key={p.slug} className="flex flex-col gap-3 py-4 md:flex-row md:items-center md:justify-between md:gap-6">
+                {p.images?.[0] && (
+                  <div className={`frame w-full max-w-[160px] shrink-0 md:order-first ${p.images[0].kind === "mobile" ? "frame-phone max-w-[72px] md:max-w-[72px]" : "md:max-w-[144px]"}`}>
+                    <Shot img={p.images[0]} lang={lang} sizes="144px" />
+                  </div>
+                )}
+                <div className="md:mr-auto">
                   <p className="font-semibold">
                     {p.title} <span className="mono muted ml-1 block md:inline">{p.meta[lang]}</span>
                   </p>
@@ -211,23 +234,33 @@ export function Credentials({ lang }: L) {
             <p className="mono muted">{c.issuer}</p>
             <p className="font-semibold">{c.title}</p>
             {c.date && <p className="small muted">{c.date[lang]}</p>}
-            {c.href && (
-              <a className="tlink small mt-auto inline-flex min-h-11 items-center gap-1 pt-2" href={c.href} target="_blank" rel="noopener noreferrer" aria-label={`${ui.buttons.verify[lang]}: ${c.title} (${nt})`}>
-                {ui.buttons.verify[lang]} <ArrowUpRight size={16} aria-hidden />
-              </a>
-            )}
+            {c.href && (() => {
+              const credly = c.href.includes("credly.com");
+              const label = credly ? ui.buttons.verify[lang] : ui.buttons.viewCert[lang];
+              return (
+                <a className="tlink small mt-auto inline-flex min-h-11 items-center gap-1 pt-2" href={c.href} target="_blank" rel="noopener noreferrer" aria-label={`${label}: ${c.title} (${nt})`}>
+                  {label} <ArrowUpRight size={16} aria-hidden />
+                </a>
+              );
+            })()}
           </li>
         ))}
       </ul>
-      <ul className="small muted mt-6 flex flex-wrap gap-x-6 gap-y-2">
-        {credentialsMore[lang].map((c) => <li key={c}>{c}</li>)}
+      <ul className="small muted mt-6 flex flex-col gap-x-6 gap-y-2 sm:flex-row sm:flex-wrap">
+        {credentialsMore[lang].map((c) => (
+          <li key={c.text}>
+            {c.text}
+            {c.links?.map((l) => (
+              <span key={l.href}>
+                {" "}
+                <a className="tlink inline-flex min-h-6 items-center gap-0.5" href={l.href} target="_blank" rel="noopener noreferrer" aria-label={`${l.label[lang]}: ${c.text} (${nt})`}>
+                  {l.label[lang]} <ArrowUpRight size={14} aria-hidden />
+                </a>
+              </span>
+            ))}
+          </li>
+        ))}
       </ul>
-      <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1">
-        <a className="btn btn-secondary w-full sm:w-auto" href={contact.certificatesFolder} target="_blank" rel="noopener noreferrer" aria-label={`${ui.buttons.allCerts[lang]} (${ui.buttons.allCertsNote[lang]})`}>
-          {ui.buttons.allCerts[lang]} <ArrowUpRight size={18} aria-hidden />
-        </a>
-        <p className="small muted">{ui.buttons.allCertsNote[lang]}</p>
-      </div>
     </section>
   );
 }
@@ -246,6 +279,11 @@ export function Timeline({ lang }: L) {
             <div>
               <h3 className="font-semibold">{t.title}</h3>
               <p className="small muted">{t.text}</p>
+              {t.title.startsWith(internshipTitle[lang]) && (
+                <a className="tlink small mt-1 inline-flex min-h-11 items-center gap-1 md:min-h-6" href={internshipCert.href} target="_blank" rel="noopener noreferrer" aria-label={`${internshipCert.label[lang]}: Bank Sampah Digital (${ui.newTab[lang]})`}>
+                  {internshipCert.label[lang]} <ArrowUpRight size={14} aria-hidden />
+                </a>
+              )}
             </div>
           </li>
         ))}
