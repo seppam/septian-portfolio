@@ -38,6 +38,17 @@ for (const u of liveUrls) {
   console.log(`[links] LIVE ${ok ? "ok  " : "FAIL"} ${s} ${u}`);
   if (!ok) bad.push([u, s]);
 }
+// Demo videos (YouTube) and the certificates folder: warn only.
+const otherUrls = [...new Set([...src.matchAll(/url:\s*"(https:\/\/youtu\.be\/[^"]+)"/g)].map((m) => m[1]))];
+const profile = readFileSync(join(root, "src/data/profile.ts"), "utf8");
+for (const m of profile.matchAll(/(?:certificatesFolder|href):\s*"(https:\/\/[^"]+)"/g)) otherUrls.push(m[1]);
+const badOther = [];
+for (const u of otherUrls) {
+  const s = await status(u);
+  if (s !== 200) badOther.push([u, s]);
+}
+console.log(`[links] videos and credential links checked: ${otherUrls.length}, not 200: ${badOther.length}`);
+for (const [u, s] of badOther) console.warn(`[links] WARN ${s} ${u}`);
 const badRepos = [];
 for (const u of [...new Set(repoUrls)]) {
   const s = await status(u);

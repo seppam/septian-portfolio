@@ -14,24 +14,25 @@ function Arrow({ x, y1, y2 }: { x: number; y1: number; y2: number }) {
   );
 }
 
-export function PipelineDiagram({ className = "" }: { className?: string }) {
+export function PipelineDiagram({ className = "", lang = "en" }: { className?: string; lang?: "en" | "id" }) {
+  const L = (en: string, id: string) => (lang === "id" ? id : en);
   return (
     <svg
       viewBox="0 0 420 560"
       className={className}
       role="img"
-      aria-label="GameForge pipeline: a prompt enters the Studio UI, the generate API streams to the spec agent, asset mapper and coder agent; results are stored in Supabase and shown in a sandboxed preview, with a debug agent repairing runtime errors. Provider fallback spans Claude, OpenAI, Gemini and Groq."
+      aria-label={L("GameForge pipeline: a prompt enters the Studio UI, the generate API streams to the spec agent, asset mapper and coder agent; results are stored in Supabase and shown in a sandboxed preview, with a debug agent repairing runtime errors. Provider fallback spans Claude, OpenAI, Gemini and Groq.", "Pipeline GameForge: prompt masuk ke UI Studio, API generate menyiarkan ke agen spec, asset mapper, dan agen coder; hasil disimpan di Supabase dan ditampilkan di pratinjau sandbox, dengan agen debug memperbaiki error runtime. Fallback provider mencakup Claude, OpenAI, Gemini, dan Groq.")}
     >
       <rect x="110" y="8" width="200" height="44" rx="10" {...box} />
-      <text x="210" y="35" textAnchor="middle" {...t}>Prompt (Studio UI)</text>
+      <text x="210" y="35" textAnchor="middle" {...t}>{L("Prompt (Studio UI)", "Prompt (UI Studio)")}</text>
       <Arrow x={210} y1={52} y2={78} />
       <rect x="40" y="78" width="340" height="40" rx="10" {...mine} />
       <text x="210" y="103" textAnchor="middle" {...t}>/api/generate (SSE stream)</text>
       <Arrow x={210} y1={118} y2={142} />
       <rect x="40" y="142" width="340" height="150" rx="12" fill="none" stroke="var(--accent)" strokeWidth="1.5" strokeDasharray="5 4" />
-      <text x="52" y="162" {...s}>MY PART: ORCHESTRATION</text>
+      <text x="52" y="162" {...s}>{L("MY PART: ORCHESTRATION", "BAGIAN SAYA: ORKESTRASI")}</text>
       <rect x="60" y="172" width="300" height="34" rx="8" {...mine} />
-      <text x="210" y="194" textAnchor="middle" {...t}>1 Spec agent: game PRD</text>
+      <text x="210" y="194" textAnchor="middle" {...t}>{L("1 Spec agent: game PRD", "1 Agen spec: PRD game")}</text>
       <rect x="60" y="214" width="300" height="34" rx="8" {...mine} />
       <text x="210" y="236" textAnchor="middle" {...t}>2 Asset mapper: Kenney + jsfxr</text>
       <rect x="60" y="256" width="300" height="30" rx="8" {...mine} />
@@ -42,43 +43,44 @@ export function PipelineDiagram({ className = "" }: { className?: string }) {
       <text x="110" y="351" textAnchor="middle" {...t}>Supabase</text>
       <text x="110" y="368" textAnchor="middle" {...s}>game_versions</text>
       <rect x="220" y="330" width="180" height="48" rx="10" {...box} />
-      <text x="310" y="351" textAnchor="middle" {...t}>Sandboxed preview</text>
-      <text x="310" y="368" textAnchor="middle" {...s}>isolated iframe</text>
+      <text x="310" y="351" textAnchor="middle" {...t}>{L("Sandboxed preview", "Pratinjau sandbox")}</text>
+      <text x="310" y="368" textAnchor="middle" {...s}>{L("isolated iframe", "iframe terisolasi")}</text>
       <Arrow x={110} y1={378} y2={412} />
       <Arrow x={310} y1={378} y2={412} />
       <rect x="20" y="412" width="180" height="40" rx="10" {...box} />
       <text x="110" y="437" textAnchor="middle" {...t}>/play/[slug]</text>
       <rect x="220" y="412" width="180" height="40" rx="10" {...mine} />
       <text x="310" y="430" textAnchor="middle" {...t}>Debug agent</text>
-      <text x="310" y="446" textAnchor="middle" {...s}>runtime error, repair</text>
+      <text x="310" y="446" textAnchor="middle" {...s}>{L("runtime error, repair", "error runtime, perbaiki")}</text>
       <rect x="20" y="480" width="380" height="64" rx="10" {...mine} />
-      <text x="210" y="504" textAnchor="middle" {...t}>Provider fallback across all agents</text>
+      <text x="210" y="504" textAnchor="middle" {...t}>{L("Provider fallback across all agents", "Fallback provider di semua agen")}</text>
       <text x="210" y="526" textAnchor="middle" {...s}>Claude, OpenAI, Gemini, Groq</text>
     </svg>
   );
 }
 
-export function ContractsDiagram({ className = "" }: { className?: string }) {
+export function ContractsDiagram({ className = "", lang = "en" }: { className?: string; lang?: "en" | "id" }) {
+  const L = (en: string, id: string) => (lang === "id" ? id : en);
   return (
     <svg
       viewBox="0 0 420 520"
       className={className}
       role="img"
-      aria-label="URSSET architecture: the Next.js investor app with Privy login and the operator server call contracts on Robinhood Chain Testnet. PropertyFactory deploys PropertyToken, PrimarySale, RentDistributor and Marketplace; KYCRegistry is checked on every token transfer; MockIDR is the test Rupiah token."
+      aria-label={L("URSSET architecture: the Next.js investor app with Privy login and the operator server call contracts on Robinhood Chain Testnet. PropertyFactory deploys PropertyToken, PrimarySale, RentDistributor and Marketplace; KYCRegistry is checked on every token transfer; MockIDR is the test Rupiah token.", "Arsitektur URSSET: aplikasi investor Next.js dengan login Privy dan server operator memanggil kontrak di Robinhood Chain Testnet. PropertyFactory men-deploy PropertyToken, PrimarySale, RentDistributor, dan Marketplace; KYCRegistry diperiksa di setiap transfer token; MockIDR adalah token Rupiah uji.")}
     >
       <rect x="10" y="8" width="195" height="62" rx="10" {...box} />
-      <text x="107" y="32" textAnchor="middle" {...t}>Investor app</text>
+      <text x="107" y="32" textAnchor="middle" {...t}>{L("Investor app", "Aplikasi investor")}</text>
       <text x="107" y="52" textAnchor="middle" {...s}>Next.js, Privy login</text>
       <rect x="215" y="8" width="195" height="62" rx="10" {...box} />
-      <text x="312" y="32" textAnchor="middle" {...t}>Operator server</text>
-      <text x="312" y="52" textAnchor="middle" {...s}>API routes, KYC flag, rent</text>
+      <text x="312" y="32" textAnchor="middle" {...t}>{L("Operator server", "Server operator")}</text>
+      <text x="312" y="52" textAnchor="middle" {...s}>{L("API routes, KYC flag, rent", "API route, flag KYC, sewa")}</text>
       <Arrow x={107} y1={70} y2={104} />
       <Arrow x={312} y1={70} y2={104} />
       <rect x="10" y="104" width="400" height="404" rx="14" fill="none" stroke="var(--border-strong)" strokeWidth="1.5" strokeDasharray="5 4" />
       <text x="24" y="126" {...s}>ROBINHOOD CHAIN TESTNET (46630)</text>
       <rect x="110" y="140" width="200" height="40" rx="10" {...mine} />
       <text x="210" y="165" textAnchor="middle" {...t}>PropertyFactory</text>
-      <text x="210" y="198" textAnchor="middle" {...s}>lists a property in one transaction</text>
+      <text x="210" y="198" textAnchor="middle" {...s}>{L("lists a property in one transaction", "mendaftarkan properti dalam satu transaksi")}</text>
       <Arrow x={210} y1={204} y2={226} />
       <rect x="30" y="226" width="170" height="40" rx="10" {...mine} />
       <text x="115" y="251" textAnchor="middle" {...t}>PropertyToken</text>
@@ -88,15 +90,15 @@ export function ContractsDiagram({ className = "" }: { className?: string }) {
       <text x="115" y="307" textAnchor="middle" {...t}>RentDistributor</text>
       <rect x="220" y="282" width="170" height="40" rx="10" {...mine} />
       <text x="305" y="307" textAnchor="middle" {...t}>Marketplace</text>
-      <text x="210" y="352" textAnchor="middle" {...s}>4 contracts per property + 3 shared = 7 types</text>
+      <text x="210" y="352" textAnchor="middle" {...s}>{L("4 contracts per property + 3 shared = 7 types", "4 kontrak per properti + 3 bersama = 7 jenis")}</text>
       <rect x="30" y="372" width="170" height="64" rx="10" {...mine} />
       <text x="115" y="396" textAnchor="middle" {...t}>KYCRegistry</text>
-      <text x="115" y="416" textAnchor="middle" {...s}>checked on every transfer</text>
+      <text x="115" y="416" textAnchor="middle" {...s}>{L("checked on every transfer", "diperiksa di setiap transfer")}</text>
       <rect x="220" y="372" width="170" height="64" rx="10" {...box} />
       <text x="305" y="396" textAnchor="middle" {...t}>MockIDR (tIDR)</text>
-      <text x="305" y="416" textAnchor="middle" {...s}>test Rupiah, zero decimals</text>
-      <text x="210" y="470" textAnchor="middle" {...s}>Every rent deposit and split is an onchain event</text>
-      <text x="210" y="490" textAnchor="middle" {...s}>anyone can check.</text>
+      <text x="305" y="416" textAnchor="middle" {...s}>{L("test Rupiah, zero decimals", "Rupiah uji, tanpa desimal")}</text>
+      <text x="210" y="470" textAnchor="middle" {...s}>{L("Every rent deposit and split is an onchain event", "Setiap setoran dan pembagian sewa adalah event onchain")}</text>
+      <text x="210" y="490" textAnchor="middle" {...s}>{L("anyone can check.", "yang bisa diperiksa siapa pun.")}</text>
     </svg>
   );
 }

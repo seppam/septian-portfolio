@@ -1,10 +1,10 @@
-// axe-core scan of the home page and every case study, in light and dark.
+// axe-core scan of the home page, every case study and the 404, in English and Indonesian, light and dark.
 // Usage: BASE=http://localhost:3000 node scripts/a11y.mjs  (run `next start` first)
 import { chromium } from "playwright";
 import { AxeBuilder } from "@axe-core/playwright";
 
 const base = process.env.BASE ?? "http://localhost:3000";
-const pages = ["/", "/work/ursset", "/work/gameforge", "/work/verihire", "/does-not-exist"];
+const pages = ["/", "/work/ursset", "/work/gameforge", "/work/verihire", "/does-not-exist", "/id", "/id/work/ursset", "/id/work/gameforge", "/id/work/verihire", "/id/does-not-exist"];
 const browser = await chromium.launch({ channel: process.env.CHROME_CHANNEL ?? "chrome" });
 let total = 0;
 for (const scheme of ["light", "dark"]) {
