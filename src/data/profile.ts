@@ -15,7 +15,7 @@ export const contact = {
 
 export const openLine: Loc<string> = {
   en: "Open to hybrid and remote roles, including remote roles worldwide.",
-  id: "Terbuka untuk peran hybrid dan remote, termasuk peran remote di seluruh dunia.",
+  id: "Terbuka untuk kerja hybrid dan remote, termasuk kerja remote di seluruh dunia.",
 };
 
 export const hero: Loc<{ h1: string; sublineLong: string; sublineShort: string }> = {
@@ -39,13 +39,13 @@ export const proof: Loc<{ value: string; caption: string; href: string }[]> = {
   en: [
     { value: "3 years", caption: "Enterprise IT at Astra Graphia IT, 2018 to 2021", href: "#timeline" },
     { value: "45 tests", caption: "7 contract types in URSSET (Foundry)", href: "/work/ursset" },
-    { value: "5 repos", caption: "Documented, each with a README and tests", href: "#engineering" },
+    { value: "5 repos", caption: "Documented, each with a README and tests", href: "#projects" },
     { value: "10 certificates", caption: "Including AWS re/Start, Cisco Cybersecurity, KADA Phase 3", href: "#credentials" },
   ],
   id: [
     { value: "3 tahun", caption: "IT enterprise di Astra Graphia IT, 2018 sampai 2021", href: "#timeline" },
     { value: "45 tes", caption: "7 jenis kontrak di URSSET (Foundry)", href: "/work/ursset" },
-    { value: "5 repo", caption: "Terdokumentasi, masing-masing dengan README dan tes", href: "#engineering" },
+    { value: "5 repo", caption: "Terdokumentasi, masing-masing dengan README dan tes", href: "#projects" },
     { value: "10 sertifikat", caption: "Termasuk AWS re/Start, Cisco Cybersecurity, KADA Phase 3", href: "#credentials" },
   ],
 };
@@ -90,7 +90,7 @@ export const about: Loc<string[]> = {
   id: [
     "Saya memulai karier di IT enterprise. Selama tiga tahun di Astra Graphia IT saya menulis dan memperbaiki sistem ASP.NET, menyusun dokumen proses bisnis dan desain sistem teknis, serta mendukung aplikasi ticketing ERP internal yang memenuhi SLA 95% setiap bulan selama saya bertugas di support.",
     "Setelah jeda karier untuk merawat keluarga dan belajar ulang secara mandiri, saya kembali pada 2026 lewat Korea ASEAN Digital Academy, tempat saya menjadi PM dan Lead Developer VeriHire dalam tim berlima. Sejak itu saya membangun URSSET sendirian, mengerjakan backend dan orkestrasi AI GameForge AI bersama tim berempat, dan mempublikasikan lima proyek engineering yang terdokumentasi.",
-    "Saya mencari peran full-stack atau systems analyst di tim yang memakai AI pada produk atau cara kerjanya. Saya suka mengubah kebutuhan yang masih kabur menjadi spesifikasi, fitur yang berjalan, dan tes yang membuktikannya. Pekerjaan saya pada 2026 dilakukan dalam tim remote, dan saya membaca serta menulis bahasa Inggris secara profesional.",
+    "Saya mencari kerja full-stack atau systems analyst di tim yang memakai AI pada produk atau cara kerjanya. Saya suka mengubah kebutuhan yang masih kabur menjadi spesifikasi, fitur yang berjalan, dan tes yang membuktikannya. Pekerjaan saya pada 2026 dilakukan dalam tim remote, dan saya membaca serta menulis bahasa Inggris secara profesional.",
   ],
 };
 

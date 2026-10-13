@@ -12,7 +12,7 @@ const LANG_NAME: Record<Lang, string> = { en: "English", id: "Bahasa Indonesia" 
 export default function Nav({ lang, alt }: { lang: Lang; alt: string }) {
   const links = [
     { href: langHref(lang, "/#work"), label: ui.nav.work[lang] },
-    { href: langHref(lang, "/#engineering"), label: ui.nav.engineering[lang] },
+    { href: langHref(lang, "/#projects"), label: ui.nav.projects[lang] },
     { href: langHref(lang, "/#about"), label: ui.nav.about[lang] },
     { href: langHref(lang, "/#credentials"), label: ui.nav.credentials[lang] },
     { href: langHref(lang, "/#contact"), label: ui.nav.contact[lang] },

@@ -201,9 +201,9 @@ export const caseStudies: Record<string, Loc<CaseStudy>> = {
       ],
       myRole: {
         did: [
-          "PM and Lead Developer of a team of 5 in KADA Phase 3 Batch 3 (250 hours). As PM, I led the planning of the project.",
-          "I built the Node.js and Express backend on MongoDB: JWT authentication, CV parsing and ATS analysis, and the Gemini and Elice AI integration (13 commits in seppam/verihire-backend).",
-          "I contributed to the React frontend (React 19 and React Router): 6 of the 20 commits in timurboys112/verihire-capstone.",
+          "Project manager and team lead of a team of 5 in KADA Phase 3 Batch 3 (250 hours). I led the planning of the project.",
+          "My main job was the backend. I built the Node.js and Express backend on MongoDB: JWT authentication, CV parsing and ATS analysis, and the Gemini and Elice AI integration (13 commits in seppam/verihire-backend).",
+          "I also contributed to parts of the React frontend (React 19 and React Router): 6 of the 20 commits in timurboys112/verihire-capstone.",
         ],
         others: "The other four members worked on the remaining features and most of the frontend; the frontend repository lives under a teammate's account.",
       },
@@ -232,9 +232,9 @@ export const caseStudies: Record<string, Loc<CaseStudy>> = {
       ],
       myRole: {
         did: [
-          "PM dan Lead Developer dalam tim berlima di KADA Phase 3 Batch 3 (250 jam). Sebagai PM, saya memimpin perencanaan proyek.",
-          "Saya membangun backend Node.js dan Express di atas MongoDB: autentikasi JWT, parsing CV dan analisis ATS, serta integrasi AI Gemini dan Elice (13 commit di seppam/verihire-backend).",
-          "Saya berkontribusi pada frontend React (React 19 dan React Router): 6 dari 20 commit di timurboys112/verihire-capstone.",
+          "Project manager dan team lead dalam tim berlima di KADA Phase 3 Batch 3 (250 jam). Saya memimpin perencanaan proyek.",
+          "Tugas utama saya adalah backend. Saya membangun backend Node.js dan Express di atas MongoDB: autentikasi JWT, parsing CV dan analisis ATS, serta integrasi AI Gemini dan Elice (13 commit di seppam/verihire-backend).",
+          "Saya juga berkontribusi pada sebagian frontend React (React 19 dan React Router): 6 dari 20 commit di timurboys112/verihire-capstone.",
         ],
         others: "Empat anggota lainnya mengerjakan fitur lainnya dan sebagian besar frontend; repositori frontend berada di akun seorang rekan tim.",
       },

@@ -31,7 +31,7 @@ for (const lang of ["en", "id"]) {
           const q = (t) => [...document.querySelectorAll("a,h1,p,span")].find((e) => e.textContent.trim().startsWith(t) && e.offsetParent !== null);
           return {
             name: vis(q("Muhamad Septian Pamungkas")), h1: vis(document.querySelector("h1")),
-            openLine: vis(q("Open to hybrid and remote") ?? q("Terbuka untuk peran hybrid")),
+            openLine: vis(q("Open to hybrid and remote") ?? q("Terbuka untuk kerja hybrid")),
             cta: vis(q("View work") ?? q("Lihat karya")), toggle: vis(document.querySelector('[aria-current="true"]')),
           };
         }, h);

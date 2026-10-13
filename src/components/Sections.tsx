@@ -109,7 +109,7 @@ export function Engineering({ lang }: L) {
   const s = ui.sections;
   const nt = ui.newTab[lang];
   return (
-    <section id="engineering" className="wrap section pt-0 md:pt-0" aria-labelledby="eng-h">
+    <section id="projects" className="wrap section pt-0 md:pt-0" aria-labelledby="eng-h">
       <Eyebrow n="02" label={s.engEyebrow[lang]} />
       <div className="flex flex-wrap items-end justify-between gap-2">
         <h2 id="eng-h" className="h2">{s.engTitle[lang]}</h2>
