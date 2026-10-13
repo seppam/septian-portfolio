@@ -69,6 +69,7 @@ export const ui = {
   buttons: {
     live: { en: "Live demo", id: "Demo live" },
     openDemo: { en: "Open demo", id: "Buka demo" },
+    tryDemo: { en: "Try the demo", id: "Coba demo" },
     caseStudy: { en: "Case study", id: "Studi kasus" },
     repo: { en: "Repo", id: "Repo" },
     readme: { en: "README", id: "README" },
@@ -90,6 +91,7 @@ export const ui = {
     prototype: { en: "Prototype, not submitted", id: "Prototipe, tidak dikirim" },
     notlive: { en: "Demo not hosted", id: "Demo tidak di-host" },
     pm: { en: "PM and Lead", id: "PM dan Lead" },
+    browserDemo: { en: "Browser demo", id: "Demo di browser" },
   },
   cs: {
     facts: { en: "Project facts", id: "Fakta proyek" },

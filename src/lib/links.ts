@@ -19,3 +19,10 @@ export function demoState(p: Project): "ok" | "offline" | "none" {
   if (!u) return "none";
   return table[u] === 200 ? "ok" : "offline";
 }
+
+/** Browser demo button and badge: shown only when the demo URL returned 200 at build time. */
+export function browserDemoState(p: Project): "ok" | "none" {
+  const u = p.links.demo;
+  if (!u) return "none";
+  return table[u] === 200 ? "ok" : "none";
+}

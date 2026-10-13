@@ -10,7 +10,7 @@ import { dirname, join } from "node:path";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const src = readFileSync(join(root, "src/data/projects.ts"), "utf8");
 const pick = (re) => [...new Set([...src.matchAll(re)].map((m) => m[1]))];
-const liveUrls = pick(/live:\s*"(https?:\/\/[^"]+)"/g);
+const liveUrls = pick(/(?:live|demo):\s*"(https?:\/\/[^"]+)"/g);
 const repoUrls = pick(/(?:url:\s*|gh\()\s*"?(https:\/\/github\.com\/[^"]+|[\w.-]+\/[\w.-]+)"/g)
   .map((u) => (u.startsWith("http") ? u : `https://github.com/${u}`));
 // gh("owner/name") helper calls:

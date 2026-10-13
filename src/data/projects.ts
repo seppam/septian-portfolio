@@ -8,7 +8,7 @@
 
 import type { Loc } from "./i18n";
 
-export type Badge = "solo" | "team" | "participant" | "prototype" | "notlive" | "pm";
+export type Badge = "solo" | "team" | "participant" | "prototype" | "notlive" | "pm" | "browserDemo";
 
 export type ProjectImage = {
   src: string;
@@ -40,6 +40,8 @@ export type Project = {
   teamLabel?: Loc<string>;
   links: {
     live?: string;
+    /** Browser demo (no server, fictional data). Shown as a "Try the demo" button and a "Browser demo" badge only when it returns 200 at build time. */
+    demo?: string;
     repos?: { label: Loc<string>; url: string }[];
     repoNote?: Loc<string>;
     videos?: { label: Loc<string>; url: string }[];
@@ -359,12 +361,12 @@ export const projects: Project[] = [
     title: "WMS Distribution Center",
     meta: { en: "Portfolio case study", id: "Studi kasus portofolio" },
     oneLiner: {
-      en: "Warehouse management system for a distribution center: receiving, put-away, inventory, picking, packing and shipping, with role-based access and a Swagger-documented API. Fictional demo data.",
-      id: "Sistem manajemen gudang untuk pusat distribusi: penerimaan, put-away, inventori, picking, packing, dan pengiriman, dengan akses berbasis peran dan API yang didokumentasikan lewat Swagger. Data demo fiktif.",
+      en: "Warehouse management system for a distribution center: receiving, put-away, inventory, picking, packing and shipping, with role-based access and a Swagger-documented API. Fictional demo data. Try it in your browser (fictional data, no database), or run the full stack with Docker.",
+      id: "Sistem manajemen gudang untuk pusat distribusi: penerimaan, put-away, inventori, picking, packing, dan pengiriman, dengan akses berbasis peran dan API yang didokumentasikan lewat Swagger. Data demo fiktif. Coba di browser (data fiktif, tanpa database), atau jalankan full stack dengan Docker.",
     },
     stack: [".NET 9", "React", "PostgreSQL"],
-    badges: [],
-    links: { repos: [{ label: REPO, url: gh("seppam/wms-distribution-center") }], readme: gh("seppam/wms-distribution-center#readme") },
+    badges: ["browserDemo"],
+    links: { demo: "https://wms-distribution-center.vercel.app", repos: [{ label: REPO, url: gh("seppam/wms-distribution-center") }], readme: gh("seppam/wms-distribution-center#readme") },
     images: [
       {
         src: "/work/wms/dashboard.webp",

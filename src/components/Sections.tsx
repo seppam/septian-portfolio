@@ -4,7 +4,7 @@ import { ArrowUpRight, ChevronDown, Mail } from "lucide-react";
 import { about, approach, contact, credentials, credentialsMore, currently, hero, internshipCert, openLine, proof, timeline } from "@/data/profile";
 import { langHref, ui, type Lang } from "@/data/i18n";
 import { byTier } from "@/data/projects";
-import { demoState } from "@/lib/links";
+import { browserDemoState, demoState } from "@/lib/links";
 import { Badge } from "./Badges";
 import ProjectCard from "./ProjectCard";
 import { Shot } from "./Media";
@@ -118,12 +118,18 @@ export function Engineering({ lang }: L) {
       <ul className="mt-8 divide-y divide-[var(--border)] border-y hair">
         {t2.map((p) => (
           <li key={p.slug} className="grid gap-3 py-6 md:grid-cols-[1.1fr_2fr_auto_224px] md:items-start md:gap-8">
-            <h3 className="h3">{p.title}</h3>
+            <div className="flex flex-wrap items-center gap-2">
+              <h3 className="h3">{p.title}</h3>
+              {browserDemoState(p) === "ok" && <Badge>{ui.badge.browserDemo[lang]}</Badge>}
+            </div>
             <div className="flex flex-col gap-3">
               <p className="small">{p.oneLiner[lang]}</p>
               <ul className="flex flex-wrap gap-2" aria-label={s.stack[lang]}>{p.stack.map((x) => <li key={x} className="chip">{x}</li>)}</ul>
             </div>
             <div className="flex flex-wrap gap-2">
+              {browserDemoState(p) === "ok" && p.links.demo && (
+                <a className="btn btn-primary btn-sm" href={p.links.demo} target="_blank" rel="noopener noreferrer" aria-label={`${p.title} ${ui.buttons.tryDemo[lang].toLowerCase()} (${nt})`}>{ui.buttons.tryDemo[lang]} <ArrowUpRight size={16} aria-hidden /></a>
+              )}
               {p.links.repos?.map((r) => (
                 <a key={r.url} className="btn btn-secondary btn-sm" href={r.url} target="_blank" rel="noopener noreferrer" aria-label={`${p.title} ${r.label[lang].toLowerCase()} GitHub (${nt})`}>{r.label[lang]} <ArrowUpRight size={16} aria-hidden /></a>
               ))}
